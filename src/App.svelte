@@ -12,7 +12,7 @@
     }
   }
 </style>
-
-<div class="container">
+<header>QA Quest</header>
+<main class="container">
   <KittyApp />
-</div>
+</main>

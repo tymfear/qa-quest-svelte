@@ -12,10 +12,7 @@
       }
     );
 
-    const data = await res.json();
-    console.log(data);
-
-    return data[0].url;
+    return (await res.json())[0].url;
   }
 </script>
 

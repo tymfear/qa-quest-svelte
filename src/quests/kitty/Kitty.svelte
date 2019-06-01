@@ -1,7 +1,8 @@
 <script>
-  import KittyImage from "./KittyImage.svelte";
-
-  let showKitty = false;
+  import MemberArea from "./MemberArea.svelte";
+  import AdminArea from "./AdminArea.svelte";
+  import Navigation from "./Navigation.svelte";
+  import { showAdminArea } from "./stores/store";
 </script>
 
 <style>
@@ -11,12 +12,16 @@
   }
 </style>
 
+<svelte:head>
+  <title>Show me the kitty</title>
+</svelte:head>
+
 <h1>Show me the kitty</h1>
-<hr />
-<div>
-  <input type="checkbox" id="kittyToggle" bind:checked={showKitty} />
-  <label for="kittyToggle">{showKitty ? 'Hide' : 'Show me'} that Kitty</label>
-  {#if showKitty}
-    <KittyImage />
-  {/if}
-</div>
+<hr/>
+<Navigation/>
+
+{#if $showAdminArea}
+  <AdminArea/>
+{:else}
+  <MemberArea/>
+{/if}
