@@ -23,8 +23,8 @@
   }
 
   .kittyContainer img {
-    max-width: 736px;
-    max-height: 736px;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   .loader {

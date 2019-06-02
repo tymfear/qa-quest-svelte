@@ -15,9 +15,6 @@
 <svelte:head>
   <title>Show me the kitty</title>
 </svelte:head>
-
-<h1>Show me the kitty</h1>
-<hr/>
 <Navigation/>
 
 {#if $showAdminArea}

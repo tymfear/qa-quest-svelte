@@ -1,5 +1,7 @@
 <script>
   import KittyApp from "./quests/kitty/Kitty.svelte";
+  import Header from './components/Header.svelte'
+  import Footer from './components/Footer.svelte'
 </script>
 
 <style>
@@ -9,10 +11,14 @@
       padding: 16px;
       width: 736px;
       flex: 1;
+      border-left: solid;
+      border-right: solid;
+      height: calc(100vh - 7rem);
     }
   }
 </style>
-<header>QA Quest</header>
+<Header/>
 <main class="container">
   <KittyApp />
 </main>
+<Footer/>
