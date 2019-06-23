@@ -7,7 +7,9 @@
 </script>
 
 <style>
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
@@ -155,7 +157,7 @@
 <p>Switch toggle to show or hide {$showAdminArea ? "user's" : ''} kitty</p>
 <div class="mid">
   <label class="rocker">
-    <input type="checkbox" checked={$showKitty} on:click={handleChange}>
+    <input type="checkbox" checked={$showKitty} on:click={handleChange} />
     <span class="switch-left">On</span>
     <span class="switch-right">Off</span>
   </label>

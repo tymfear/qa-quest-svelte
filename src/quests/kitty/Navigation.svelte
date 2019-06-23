@@ -14,11 +14,12 @@
   }
 
   a:hover {
-    box-shadow: 0 0 10px rgba(255,165,0,0.5)
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
   }
 </style>
+
 <nav>
-  <a href="#" on:click={() => showAdminArea.update(show => !show)}>
-  Show {$showAdminArea ?  'Member' : 'Admin'} Area
+  <a href="#admin" on:click={() => showAdminArea.update(show => !show)}>
+    Show {$showAdminArea ? 'Member' : 'Admin'} Area
   </a>
 </nav>

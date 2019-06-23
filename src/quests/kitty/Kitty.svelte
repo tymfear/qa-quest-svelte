@@ -3,22 +3,26 @@
   import AdminArea from "./AdminArea.svelte";
   import Navigation from "./Navigation.svelte";
   import { showAdminArea } from "./stores/store";
-</script>
+  import { creditsInfo } from "../../components/stores/store.js";
+  import { onMount } from "svelte";
 
-<style>
-  h1 {
-    margin: 0 auto;
-    text-align: center;
-  }
-</style>
+  onMount(() => {
+    creditsInfo.update(() => {
+      return {
+        author: "Taras Voloshenko",
+        profileLink: "https://www.linkedin.com/in/taras-voloshenko-12a42912"
+      };
+    });
+  });
+</script>
 
 <svelte:head>
   <title>Show me the kitty</title>
 </svelte:head>
-<Navigation/>
+<Navigation />
 
 {#if $showAdminArea}
-  <AdminArea/>
+  <AdminArea />
 {:else}
-  <MemberArea/>
+  <MemberArea />
 {/if}
