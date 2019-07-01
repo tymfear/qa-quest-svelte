@@ -11,7 +11,8 @@
         "rollup-plugin-svelte": "^5.1.0",
         "rollup-plugin-terser": "^4.0.4",
         "sirv-cli": "^0.4.4",
-        "svelte": "^3.5.4"
+        "svelte": "^3.5.4",
+        "svelte-routing": "^1.2.1"
     },
     "scripts": {
         "build": "rollup -c",

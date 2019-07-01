@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
-  const dispatchClose = () => dispatch("closeCommonModal");
+  const dispatchClose = () => dispatch("closeModal");
 </script>
 
 <style>
@@ -61,6 +61,6 @@
 
   <slot />
   <footer>
-    <a href="#" on:click={dispatchClose}>close</a>
+    <a href="#" on:click={dispatchClose}>Close</a>
   </footer>
 </div>

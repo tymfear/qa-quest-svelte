@@ -1,4 +1,3 @@
 import { writable } from "svelte/store";
 
-
-export const creditsInfo = writable({});
+export const headerStore = writable({});

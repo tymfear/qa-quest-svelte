@@ -1,7 +1,9 @@
 <script>
+  import { Router, Route, Link } from "svelte-routing";
   import KittyApp from "./quests/kitty/Kitty.svelte";
   import Header from "./components/Header.svelte";
   import Footer from "./components/Footer.svelte";
+  import MainApp from "./mainApp/MainApp.svelte";
 </script>
 
 <style>
@@ -19,8 +21,11 @@
   }
 </style>
 
-<Header />
+<Header/>
 <main class="container">
-  <KittyApp />
+  <Router>
+    <Route path="kitty" component="{KittyApp}"/>
+    <Route path="/" component="{MainApp}"/>
+  </Router>
 </main>
-<Footer />
+<Footer/>

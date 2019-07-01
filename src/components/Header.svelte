@@ -1,5 +1,7 @@
 <script>
+  import { navigate } from "svelte-routing";
   import CreditsModal from "./modals/CreditsModal.svelte";
+  import { headerStore } from "./stores/store";
 
   let showModal = false;
 </script>
@@ -23,19 +25,23 @@
   .logo,
   .credits {
     width: 20%;
+    cursor: pointer;
   }
 
   .credits {
     text-align: right;
-    cursor: pointer;
   }
 </style>
 
 <header>
-  <p class="logo">QA Quest</p>
-  <p class="quest-name">Show me a Kitty</p>
-  <p class="credits" on:click={() => (showModal = true)}>Credits</p>
+  <p class="logo" on:click={() => navigate('/')}>QA Quest</p>
+  <p class="quest-name">{$headerStore.questName}</p>
+  <div class="credits">
+      {#if $headerStore.showAuthorInfo}
+        <p on:click={() => (showModal = true)}>Credits</p>
+      {/if}
+  </div>
 </header>
 {#if showModal}
-  <CreditsModal on:closeCreditsModal={() => (showModal = false)} />
+  <CreditsModal on:closeModal={() => (showModal = false)} />
 {/if}

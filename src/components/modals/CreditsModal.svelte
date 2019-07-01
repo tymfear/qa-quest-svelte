@@ -1,12 +1,7 @@
 <script>
-  import { creditsInfo } from "../stores/store.js";
+  import { headerStore } from "../stores/store.js";
   import Modal from "../ModalCommon.svelte";
   import LinkedinLink from "../icons/LinkedinLink.svelte";
-
-  import { createEventDispatcher } from "svelte";
-
-  const dispatch = createEventDispatcher();
-  const dispatchClose = () => dispatch("closeCreditsModal");
 </script>
 
 <style>
@@ -25,13 +20,13 @@
   }
 </style>
 
-<Modal on:closeCommonModal={dispatchClose}>
+<Modal on:closeModal>
   <h3 slot="header">Credits</h3>
   <h4>Quest Author</h4>
   <div class="authorInfo">
-    <h1 id="authorName">{$creditsInfo.author}</h1>
+    <h1 id="authorName">{$headerStore.author}</h1>
     <div id="linkedinLink">
-      <LinkedinLink link={$creditsInfo.profileLink} />
+      <LinkedinLink link={$headerStore.profileLink} />
     </div>
   </div>
 </Modal>
